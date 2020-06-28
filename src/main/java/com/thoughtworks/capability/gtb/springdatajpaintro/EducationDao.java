@@ -2,22 +2,22 @@ package com.thoughtworks.capability.gtb.springdatajpaintro;
 
 import org.springframework.stereotype.Component;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Component
 public class EducationDao {
-    final Map<Long, List<Education>> educations = new HashMap<>();
+    final List<Education> educations = new ArrayList<>();
 
     public List<Education> findAllByUserId(Long userId) {
-        return educations.get(userId);
+        return educations.stream()
+                .filter(education -> Objects.equals(userId, education.getUserId()))
+                .collect(Collectors.toList());
     }
 
     public void save(Education education) {
-        List<Education> userEducations = this.educations.get(education.getUserId());
-        if (Objects.isNull(userEducations)) {
-            userEducations = new ArrayList<>();
-            this.educations.put(education.getUserId(), userEducations);
-        }
-        userEducations.add(education);
+        educations.add(education);
     }
 }
