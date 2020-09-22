@@ -1,6 +1,5 @@
 package com.thoughtworks.capability.gtb.springdatajpaintro.service;
 
-import com.thoughtworks.capability.gtb.springdatajpaintro.dao.EducationDao;
 import com.thoughtworks.capability.gtb.springdatajpaintro.dao.UserDao;
 import com.thoughtworks.capability.gtb.springdatajpaintro.entity.Education;
 import com.thoughtworks.capability.gtb.springdatajpaintro.entity.User;
