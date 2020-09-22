@@ -7,6 +7,7 @@ import com.thoughtworks.capability.gtb.springdatajpaintro.entity.User;
 import com.thoughtworks.capability.gtb.springdatajpaintro.exception.UserNotExistedException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +16,7 @@ import java.util.Map;
 public class UserService {
     final UserDao userDao;
     final EducationDao educationDao;
+    final Map<Long, List<Education>> educations = new HashMap<>();
 
     public UserService(UserDao userDao, EducationDao educationDao) {
         this.userDao = userDao;
@@ -37,11 +39,10 @@ public class UserService {
 
     public List<Education> getEducationsForUser(Long userId) {
         findById(userId);
-        return educationDao.findAllByUserId(userId);
+        return educations.get(userId);
     }
 
     public void addEducationForUser(Long userId, Education education) {
-        findById(userId);
-        educationDao.save(education);
+        getEducationsForUser(userId).add(education);
     }
 }
