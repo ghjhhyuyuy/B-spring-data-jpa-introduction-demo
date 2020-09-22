@@ -1,5 +1,6 @@
-package com.thoughtworks.capability.gtb.springdatajpaintro;
+package com.thoughtworks.capability.gtb.springdatajpaintro.dao;
 
+import com.thoughtworks.capability.gtb.springdatajpaintro.entity.User;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 

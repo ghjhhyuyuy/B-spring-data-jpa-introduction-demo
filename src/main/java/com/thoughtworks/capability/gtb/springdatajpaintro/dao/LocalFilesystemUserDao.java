@@ -1,7 +1,8 @@
-package com.thoughtworks.capability.gtb.springdatajpaintro;
+package com.thoughtworks.capability.gtb.springdatajpaintro.dao;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.thoughtworks.capability.gtb.springdatajpaintro.entity.User;
 
 import java.io.BufferedWriter;
 import java.io.File;

@@ -1,5 +1,6 @@
-package com.thoughtworks.capability.gtb.springdatajpaintro;
+package com.thoughtworks.capability.gtb.springdatajpaintro.dao;
 
+import com.thoughtworks.capability.gtb.springdatajpaintro.entity.Education;
 import org.springframework.stereotype.Component;
 
 import java.util.*;

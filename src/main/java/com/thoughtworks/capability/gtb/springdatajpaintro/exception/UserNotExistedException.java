@@ -1,4 +1,4 @@
-package com.thoughtworks.capability.gtb.springdatajpaintro;
+package com.thoughtworks.capability.gtb.springdatajpaintro.exception;
 
 public class UserNotExistedException extends RuntimeException {
 

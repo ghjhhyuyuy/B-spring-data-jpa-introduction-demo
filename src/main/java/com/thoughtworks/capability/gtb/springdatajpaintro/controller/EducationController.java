@@ -1,5 +1,7 @@
-package com.thoughtworks.capability.gtb.springdatajpaintro;
+package com.thoughtworks.capability.gtb.springdatajpaintro.controller;
 
+import com.thoughtworks.capability.gtb.springdatajpaintro.service.UserService;
+import com.thoughtworks.capability.gtb.springdatajpaintro.entity.Education;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,5 +1,6 @@
-package com.thoughtworks.capability.gtb.springdatajpaintro;
+package com.thoughtworks.capability.gtb.springdatajpaintro.dao;
 
+import com.thoughtworks.capability.gtb.springdatajpaintro.entity.User;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.sql.*;
@@ -108,6 +109,7 @@ public class JdbcUserDao implements UserDao {
     }
 
     private Connection getConnection() throws SQLException {
+        System.out.println(connectionUrl);
         return DriverManager.getConnection(connectionUrl, username, password);
     }
 }

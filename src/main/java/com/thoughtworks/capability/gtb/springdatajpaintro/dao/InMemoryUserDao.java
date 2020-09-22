@@ -1,4 +1,6 @@
-package com.thoughtworks.capability.gtb.springdatajpaintro;
+package com.thoughtworks.capability.gtb.springdatajpaintro.dao;
+
+import com.thoughtworks.capability.gtb.springdatajpaintro.entity.User;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
