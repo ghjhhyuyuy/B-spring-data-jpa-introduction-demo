@@ -1,13 +1,11 @@
 package com.thoughtworks.capability.gtb.springdatajpaintro.service;
 
-import com.thoughtworks.capability.gtb.springdatajpaintro.dao.EducationDao;
 import com.thoughtworks.capability.gtb.springdatajpaintro.dao.UserDao;
 import com.thoughtworks.capability.gtb.springdatajpaintro.entity.Education;
 import com.thoughtworks.capability.gtb.springdatajpaintro.entity.User;
 import com.thoughtworks.capability.gtb.springdatajpaintro.exception.UserNotExistedException;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,12 +13,11 @@ import java.util.Map;
 @Service
 public class UserService {
     final UserDao userDao;
-    final EducationDao educationDao;
-    final Map<Long, List<Education>> educations = new HashMap<>();
+    Map<Long, List<Education>> educations = new HashMap<>();
 
-    public UserService(UserDao userDao, EducationDao educationDao) {
+    public UserService(UserDao userDao, Map<Long, List<Education>> educations) {
         this.userDao = userDao;
-        this.educationDao = educationDao;
+        this.educations = educations;
     }
 
     public List<User> findUsers() {

@@ -70,7 +70,7 @@ class EducationControllerTest {
         class WhenUserIdExists {
 
             @Test
-            public void should_return_education_by_id_with_jsonPath() throws Exception {
+            public void should_return_educations_by_id_with_jsonPath() throws Exception {
                 when(userService.getEducationsForUser(11L)).thenReturn(educations);
 
                 mockMvc.perform(get("/users/{id}/educations",11))
@@ -100,7 +100,7 @@ class EducationControllerTest {
         }
     }
     @Nested
-    class addEducationForUser {
+    class AddEducationForUser {
 
         private Education nextEducation;
 
@@ -119,8 +119,6 @@ class EducationControllerTest {
 
             @Test
             public void should_add_education() throws Exception {
-                //when(userService.addEducationForUser(nextEducation.getUserId(),nextEducation)).thenReturn(true);
-
                 MockHttpServletRequestBuilder requestBuilder = post("/users/{userId}/educations",11)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(educationJson.write(nextEducation).getJson());
