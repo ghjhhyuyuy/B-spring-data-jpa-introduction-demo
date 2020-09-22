@@ -2,6 +2,7 @@ package com.thoughtworks.capability.gtb.springdatajpaintro.controller;
 
 import com.thoughtworks.capability.gtb.springdatajpaintro.service.UserService;
 import com.thoughtworks.capability.gtb.springdatajpaintro.entity.Education;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class EducationController {
     }
 
     @PostMapping("/users/{userId}/educations")
+    @ResponseStatus(HttpStatus.CREATED)
     public void addEducationForUser(@PathVariable Long userId, @RequestBody Education education) {
         education.setUserId(userId);
         userService.addEducationForUser(userId, education);

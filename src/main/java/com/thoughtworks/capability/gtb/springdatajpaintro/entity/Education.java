@@ -5,6 +5,9 @@ import lombok.*;
 import javax.persistence.*;
 
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Education {
     private Long userId;
     private Long year;
